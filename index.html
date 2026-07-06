@@ -3,824 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Guard Fire Solutions</title>
+    <title>Master Guard Fire Solutions - Premier Fire Protection</title>
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
+    <link rel="icon" href="images/logo.jpg" type="image/icon type">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
-    <style>
-        /* --- Global & Theme --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body {
-            overflow-x: hidden;
-            width: 100%;
-            max-width: 100%;
-        }
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #080808;
-            color: #e0e0e0;
-            background-image:
-                radial-gradient(circle at 15% 30%, rgba(255, 68, 0, 0.15), transparent 40%),
-                radial-gradient(circle at 85% 70%, rgba(255, 68, 0, 0.08), transparent 40%);
-            background-attachment: fixed;
-        }
-
-        h1, h2, h3, h4, h5 {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            color: #fff;
-        }
-
-        .text-orange { color: #ff4500 !important; }
-        .bg-dark-custom { background-color: #0a0a0a; }
-        .section-padding { padding: 80px 0; }
-
-        .section-title {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-        }
-
-        .border-bottom-orange {
-            width: 60px;
-            height: 4px;
-            background-color: #ff4500;
-            margin-bottom: 25px;
-        }
-        .border-bottom-orange.mx-auto { margin-left: auto; margin-right: auto; }
-
-        /* --- Animations --- */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .hover-scale {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .hover-scale:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 68, 0, 0.3);
-        }
-
-        .hover-glow:hover {
-            box-shadow: 0 0 30px rgba(255, 68, 0, 0.2);
-        }
-
-        /* Floating Animation */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        .float-animation {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 68, 0, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(255, 68, 0, 0.6); }
-        }
-        .pulse-glow {
-            animation: pulse-glow 2s ease-in-out infinite;
-        }
-
-        /* --- TOP BAR --- */
-        .top-bar {
-            background: #0a0a0a;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            font-size: 13px;
-            padding: 8px 0;
-            color: #999;
-        }
-        .top-bar i { color: #ff4500; margin-right: 6px; }
-        .top-bar .social-icons a {
-            color: #fff;
-            margin-left: 15px;
-            transition: 0.3s;
-            text-decoration: none;
-        }
-        .top-bar .social-icons a:hover { color: #ff4500; transform: rotate(360deg); transition: 0.5s; }
-
-        /* --- NAVBAR --- */
-        .navbar {
-            background: rgba(10, 10, 10, 0.95) !important;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding: 10px 0;
-        }
-
-        /* --- Brand with Logo + Name --- */
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 0;
-            text-decoration: none;
-        }
-        .navbar-brand .logo-circle {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid #ff4500;
-            box-shadow: 0 0 20px rgba(255, 68, 0, 0.3);
-            transition: all 0.4s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #0a0a0a;
-            flex-shrink: 0;
-        }
-        .navbar-brand .logo-circle:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 0 40px rgba(255, 68, 0, 0.6);
-            border-color: #ff6a33;
-        }
-        .navbar-brand .logo-circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .navbar-brand .brand-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.1;
-        }
-        .navbar-brand .brand-text .main-name {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 700;
-            font-size: 1.4rem;
-            color: #fff;
-            letter-spacing: 1px;
-        }
-        .navbar-brand .brand-text .main-name span {
-            color: #ff4500;
-        }
-        .navbar-brand .brand-text .sub-name {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 500;
-            font-size: 0.65rem;
-            color: #ff4500;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .nav-link {
-            color: #bbb !important;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 0 10px;
-            padding: 8px 0 !important;
-            transition: 0.3s;
-            font-weight: 500;
-            position: relative;
-        }
-        .nav-link:hover, .nav-link.active {
-            color: #ff4500 !important;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #ff4500;
-            transition: 0.3s;
-        }
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-        }
-
-        /* --- OFFCANVAS (Mobile Menu) - LEFT SIDE, FULL HEIGHT, ICONS ONLY --- */
-        .offcanvas {
-            background-color: #0a0a0a !important;
-            border-right: 1px solid rgba(255,255,255,0.05); /* changed from border-left */
-            width: 260px !important;
-            max-width: 80vw !important;
-            height: 100vh !important;
-            max-height: 100vh !important;
-            top: 0 !important;
-            left: 0 !important;   /* key change: left side */
-            display: flex;
-            flex-direction: column;
-        }
-        .offcanvas-header {
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding: 18px 20px;
-            flex-shrink: 0;
-            justify-content: flex-start; /* align close button to the left */
-        }
-        .offcanvas-header .btn-close {
-            filter: invert(1);
-            opacity: 0.8;
-            font-size: 1.2rem;
-            margin-left: 0; /* ensure it's on the left */
-        }
-        .offcanvas-body {
-            padding: 10px 15px;
-            flex: 1;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-        }
-        .offcanvas .nav-link {
-            font-size: 15px;
-            padding: 14px 10px !important;
-            margin: 0;
-            border-bottom: 1px solid rgba(255,255,255,0.03);
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            color: #ccc !important;
-            border-radius: 6px;
-        }
-        .offcanvas .nav-link:hover {
-            padding-left: 18px !important;
-            color: #ff4500 !important;
-            background: rgba(255, 68, 0, 0.08);
-        }
-        .offcanvas .nav-link::after { display: none; }
-        .offcanvas .nav-link i {
-            width: 22px;
-            color: #ff4500;
-            font-size: 16px;
-            text-align: center;
-            flex-shrink: 0;
-        }
-        .offcanvas .nav-link span {
-            flex: 1;
-        }
-
-        /* --- Sidebar Bottom (Contact Info) - Sticks to bottom --- */
-        .offcanvas-footer {
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding: 16px 15px;
-            flex-shrink: 0;
-            margin-top: auto;
-        }
-        .offcanvas-footer .sidebar-contact {
-            color: #666;
-            font-size: 12px;
-            line-height: 1.8;
-        }
-        .offcanvas-footer .sidebar-contact i {
-            color: #ff4500;
-            width: 20px;
-            margin-right: 6px;
-            font-size: 13px;
-        }
-        .offcanvas-footer .sidebar-contact .phone {
-            color: #ff4500;
-            font-weight: 700;
-            font-size: 14px;
-        }
-        .offcanvas-footer .sidebar-social {
-            display: flex;
-            gap: 12px;
-            margin-top: 8px;
-        }
-        .offcanvas-footer .sidebar-social a {
-            color: #555;
-            font-size: 16px;
-            transition: 0.3s;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .offcanvas-footer .sidebar-social a:hover {
-            color: #ff4500;
-            background: rgba(255, 68, 0, 0.1);
-            border-color: #ff4500;
-            transform: translateY(-2px);
-        }
-
-        /* --- Navbar Toggler (Hamburger) --- */
-        .navbar-toggler {
-            border: none;
-            padding: 8px;
-        }
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-        .navbar-toggler-icon {
-            filter: invert(1);
-            width: 28px;
-            height: 28px;
-        }
-
-        /* --- HERO --- */
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            padding: 100px 0 50px;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 60%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 68, 0, 0.05), transparent 70%);
-            animation: pulse-glow 4s ease-in-out infinite;
-        }
-        .hero-title {
-            font-size: 4.5rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-        .hero-text {
-            color: #aaa;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 30px;
-            max-width: 500px;
-        }
-        .cta-btn {
-            background-color: #ff4500;
-            color: #fff;
-            padding: 14px 35px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            border: 2px solid #ff4500;
-            display: inline-block;
-        }
-        .cta-btn:hover {
-            background-color: transparent;
-            color: #ff4500;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(255, 68, 0, 0.3);
-        }
-        .cta-btn-outline {
-            background: transparent;
-            border-color: #fff;
-            color: #fff;
-        }
-        .cta-btn-outline:hover {
-            border-color: #ff4500;
-            color: #ff4500;
-        }
-
-        .hero-img-container {
-            position: relative;
-            height: 400px;
-            width: 100%;
-        }
-        .img-main {
-            position: absolute;
-            right: 0;
-            top: 30px;
-            width: 85%;
-            height: 90%;
-            object-fit: cover;
-            border-radius: 8px;
-            transform: rotate(4deg);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-            z-index: 1;
-            transition: transform 0.5s ease;
-        }
-        .img-main:hover {
-            transform: rotate(0deg) scale(1.02);
-        }
-        .img-bg {
-            position: absolute;
-            right: 80px;
-            top: 0;
-            width: 75%;
-            height: 85%;
-            object-fit: cover;
-            border-radius: 8px;
-            opacity: 0.7;
-            z-index: 0;
-            animation: float 4s ease-in-out infinite;
-        }
-
-        /* --- About Cards --- */
-        .about-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 30px;
-            transition: all 0.4s ease;
-            height: 100%;
-        }
-        .about-card:hover {
-            background: rgba(255, 68, 0, 0.05);
-            border-color: #ff4500;
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 10px 30px rgba(255, 68, 0, 0.15);
-        }
-        .about-card i {
-            font-size: 2.5rem;
-            color: #ff4500;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease;
-        }
-        .about-card:hover i {
-            transform: rotate(360deg) scale(1.1);
-        }
-        .about-card h5 { font-size: 1.2rem; margin-bottom: 10px; }
-        .about-card p { font-size: 0.95rem; color: #bbb; margin-bottom: 0; line-height: 1.6; }
-        .about-card ul { list-style: none; padding: 0; margin: 0; }
-        .about-card ul li {
-            padding: 5px 0;
-            font-size: 0.95rem;
-            color: #bbb;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            transition: padding-left 0.3s ease;
-        }
-        .about-card ul li:hover {
-            padding-left: 10px;
-            color: #fff;
-        }
-        .about-card ul li i { font-size: 0.7rem; margin-right: 10px; margin-bottom: 0; }
-
-        .value-box {
-            text-align: center;
-            padding: 30px 20px;
-            transition: 0.4s ease;
-            border-radius: 8px;
-        }
-        .value-box:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 68, 0, 0.05);
-        }
-        .value-box i {
-            font-size: 2.8rem;
-            color: #ff4500;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease;
-        }
-        .value-box:hover i {
-            transform: scale(1.2) rotate(10deg);
-        }
-        .value-box h5 { font-size: 1.1rem; }
-        .value-box p { color: #aaa; font-size: 0.95rem; margin: 0; }
-
-        /* --- Products --- */
-        .product-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            background: #111;
-            margin-bottom: 30px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.4s ease;
-        }
-        .product-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 68, 0, 0.2);
-            border-color: #ff4500;
-        }
-        .product-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-            display: block;
-        }
-        .product-item:hover img {
-            transform: scale(1.1) rotate(2deg);
-        }
-        .product-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-            padding: 20px;
-            color: #fff;
-            transform: translateY(0);
-            transition: transform 0.3s ease;
-        }
-        .product-item:hover .product-overlay {
-            transform: translateY(-5px);
-        }
-        .product-overlay h6 {
-            margin: 0;
-            font-size: 1rem;
-            text-transform: uppercase;
-        }
-
-        /* --- Team Section --- */
-        .team-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 30px 20px 25px;
-            text-align: center;
-            transition: all 0.5s ease;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-        .team-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #ff4500, #ff6a33, #ff4500);
-            background-size: 200% 100%;
-            animation: gradientMove 3s ease-in-out infinite;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .team-card:hover::before {
-            opacity: 1;
-        }
-        @keyframes gradientMove {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        .team-card:hover {
-            transform: translateY(-10px);
-            border-color: #ff4500;
-            box-shadow: 0 15px 40px rgba(255, 68, 0, 0.15);
-            background: rgba(255, 68, 0, 0.05);
-        }
-        .team-card .team-image {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 18px;
-            border: 3px solid rgba(255, 68, 0, 0.3);
-            transition: all 0.5s ease;
-        }
-        .team-card:hover .team-image {
-            border-color: #ff4500;
-            box-shadow: 0 0 30px rgba(255, 68, 0, 0.3);
-            transform: scale(1.05);
-        }
-        .team-card .team-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .team-card .team-name {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 3px;
-            text-transform: uppercase;
-        }
-        .team-card .team-role {
-            color: #ff4500;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-        .team-card .team-bio {
-            color: #aaa;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        .team-card .team-social a {
-            display: inline-block;
-            color: #666;
-            margin: 0 8px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            width: 36px;
-            height: 36px;
-            line-height: 36px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .team-card .team-social a:hover {
-            color: #fff;
-            background: #ff4500;
-            border-color: #ff4500;
-            transform: translateY(-3px) scale(1.1);
-            box-shadow: 0 5px 15px rgba(255, 68, 0, 0.3);
-        }
-
-        /* --- Testimonials --- */
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 8px;
-            transition: 0.4s ease;
-            height: 100%;
-        }
-        .testimonial-card:hover {
-            border-color: #ff4500;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 68, 0, 0.1);
-        }
-        .testimonial-card i.quote-icon {
-            color: #ff4500;
-            font-size: 2.5rem;
-            opacity: 0.3;
-            margin-bottom: 15px;
-            transition: opacity 0.3s ease;
-        }
-        .testimonial-card:hover i.quote-icon {
-            opacity: 0.8;
-        }
-        .testimonial-card p {
-            color: #ccc;
-            font-style: italic;
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
-        .testimonial-card .client-name {
-            color: #fff;
-            font-weight: 600;
-            margin: 0;
-            font-size: 1rem;
-        }
-        .testimonial-card .client-role {
-            color: #888;
-            font-size: 0.85rem;
-            margin: 0;
-        }
-
-        /* --- Clients --- */
-        .client-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 12px 28px;
-            border-radius: 30px;
-            margin: 5px 8px;
-            color: #ccc;
-            font-size: 14px;
-            font-weight: 500;
-            transition: 0.4s ease;
-            cursor: default;
-        }
-        .client-badge:hover {
-            background: #ff4500;
-            color: #fff;
-            border-color: #ff4500;
-            transform: scale(1.05) translateY(-3px);
-            box-shadow: 0 5px 20px rgba(255, 68, 0, 0.3);
-        }
-
-        /* --- Contact --- */
-        .contact-form input, .contact-form textarea {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #fff;
-            padding: 12px 15px;
-            border-radius: 4px;
-            width: 100%;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-        .contact-form input:focus, .contact-form textarea:focus {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: #ff4500;
-            outline: none;
-            box-shadow: 0 0 20px rgba(255, 68, 0, 0.1);
-            color: #fff;
-            transform: scale(1.01);
-        }
-        .contact-form textarea { min-height: 140px; resize: vertical; }
-        .contact-form button {
-            background: #ff4500;
-            color: #fff;
-            border: none;
-            padding: 12px 40px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            font-weight: 600;
-            transition: 0.3s ease;
-        }
-        .contact-form button:hover {
-            background: #d63b00;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(255, 68, 0, 0.3);
-        }
-
-        .contact-info-box {
-            background: rgba(255, 68, 0, 0.1);
-            border-left: 4px solid #ff4500;
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: 0.3s ease;
-        }
-        .contact-info-box:hover {
-            background: rgba(255, 68, 0, 0.15);
-            transform: translateX(5px);
-        }
-        .contact-info-box h6 { color: #ff4500; font-size: 1rem; margin-bottom: 5px; }
-        .contact-info-box p { color: #ccc; margin: 0; font-size: 0.95rem; }
-
-        /* --- Footer --- */
-        footer {
-            background: #020202;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding: 60px 0 20px;
-        }
-        footer h5 { font-size: 1.2rem; margin-bottom: 20px; }
-        footer ul { list-style: none; padding: 0; }
-        footer ul li { margin-bottom: 10px; }
-        footer ul li a {
-            color: #888;
-            text-decoration: none;
-            transition: 0.3s ease;
-            font-size: 0.95rem;
-        }
-        footer ul li a:hover {
-            color: #ff4500;
-            padding-left: 10px;
-        }
-        footer .social-icons a {
-            display: inline-block;
-            transition: 0.3s ease;
-        }
-        footer .social-icons a:hover {
-            transform: translateY(-3px) rotate(360deg);
-            color: #ff4500 !important;
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 991px) {
-            .hero-title { font-size: 3rem; }
-            .hero-img-container { height: 300px; margin-top: 40px; }
-            .img-main { width: 80%; right: 10px; }
-            .img-bg { width: 70%; right: 50px; }
-            .section-padding { padding: 50px 0; }
-            .navbar-brand .brand-text .main-name { font-size: 1.1rem; }
-            .navbar-brand .brand-text .sub-name { font-size: 0.55rem; }
-            .navbar-brand .logo-circle { width: 45px; height: 45px; }
-        }
-
-        @media (max-width: 576px) {
-            .hero-title { font-size: 2.2rem; }
-            .top-bar .contact-info { font-size: 10px; flex-direction: column; align-items: flex-start; gap: 5px; }
-            .section-title { font-size: 2rem; }
-            .img-main { width: 90%; right: 0; transform: rotate(2deg); }
-            .img-bg { display: none; }
-            .navbar-brand .logo-circle {
-                width: 38px;
-                height: 38px;
-            }
-            .navbar-brand .brand-text .main-name { font-size: 0.85rem; }
-            .navbar-brand .brand-text .sub-name { font-size: 0.45rem; letter-spacing: 1px; }
-            .offcanvas {
-                width: 85% !important;
-                max-width: 85vw !important;
-            }
-            .team-card .team-image {
-                width: 100px;
-                height: 100px;
-            }
-            .container {
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-            .row {
-                margin-left: 0;
-                margin-right: 0;
-            }
-            .col-6, .col-12, .col-md-4, .col-lg-3, .col-lg-4 {
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
-    <!-- TOP BAR -->
+    <!-- ===== TOP BAR ===== -->
     <div class="top-bar">
         <div class="container d-flex flex-wrap justify-content-between align-items-center">
             <div class="contact-info d-flex flex-wrap gap-3">
@@ -832,14 +31,14 @@
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
         <div class="container">
-            <!-- Brand / Logo with Circular Image + Company Name -->
             <a class="navbar-brand" href="#home">
                 <div class="logo-circle">
                     <img src="images/logo.jpg" alt="Master Guard Fire Solutions Logo">
@@ -850,12 +49,10 @@
                 </div>
             </a>
 
-            <!-- Hamburger Toggler - Only shows on small screens -->
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Desktop Navigation - Hidden on mobile, visible on large -->
             <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
@@ -863,12 +60,12 @@
                     <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#clients">Clients</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
 
-            <!-- Mobile Offcanvas Sidebar - LEFT SIDE, FULL HEIGHT, ICONS ONLY -->
             <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -880,6 +77,8 @@
                         <li class="nav-item"><a class="nav-link" href="#products"><i class="fas fa-fire-extinguisher"></i> <span>Products</span></a></li>
                         <li class="nav-item"><a class="nav-link" href="#team"><i class="fas fa-users"></i> <span>Team</span></a></li>
                         <li class="nav-item"><a class="nav-link" href="#services"><i class="fas fa-tools"></i> <span>Services</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects"><i class="fas fa-project-diagram"></i> <span>Projects</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#certifications"><i class="fas fa-certificate"></i> <span>Certifications</span></a></li>
                         <li class="nav-item"><a class="nav-link" href="#clients"><i class="fas fa-building"></i> <span>Clients</span></a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
                     </ul>
@@ -888,7 +87,7 @@
         </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- ===== HERO ===== -->
     <section class="hero" id="home">
         <div class="container">
             <div class="row align-items-center">
@@ -916,39 +115,39 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ===== ABOUT ===== -->
     <section class="section-padding" id="about" style="background: rgba(0,0,0,0.3);">
         <div class="container">
             <div class="row mb-4">
-                <div class="col-lg-8 animate-on-scroll">
+                <div class="col-lg-8" data-aos="fade-right">
                     <h2 class="section-title">About <span class="text-orange">Master Guard</span></h2>
                     <div class="border-bottom-orange"></div>
                     <p class="text-secondary mb-0">We are one of the leading private organizations specializing in comprehensive fire protection systems. Our highly qualified team handles everything from Design, Supply, Installation, to Maintenance, strictly adhering to NFPA, BS EN3, and international standards.</p>
                 </div>
             </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3 animate-on-scroll">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
                     <div class="about-card text-center">
                         <i class="fas fa-eye"></i>
                         <h5>Our Vision</h5>
                         <p>To empower our clients through Education, Awareness, and Training on how to Mitigate, Prepare, and Respond to Disasters effectively.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 animate-on-scroll">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
                     <div class="about-card text-center">
                         <i class="fas fa-bullseye"></i>
                         <h5>Our Mission</h5>
                         <p>To provide quality hardware, hazard training, and audits, while adapting technology to deliver optimal, satisfying solutions for our clients.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 animate-on-scroll">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
                     <div class="about-card text-center">
                         <i class="fas fa-gavel"></i>
                         <h5>Code of Ethics</h5>
                         <p>Save Life and Property is our top priority. We uphold strict professionalism, adhere to high standards, and conduct business with absolute integrity.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 animate-on-scroll">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
                     <div class="about-card">
                         <i class="fas fa-check-circle"></i>
                         <h5>Why Choose Us?</h5>
@@ -964,36 +163,36 @@
         </div>
     </section>
 
-    <!-- CORE VALUES -->
+    <!-- ===== CORE VALUES ===== -->
     <section class="section-padding">
         <div class="container">
-            <div class="text-center mb-5 animate-on-scroll">
+            <div class="text-center mb-5" data-aos="fade-up">
                 <h2 class="section-title">Our Core <span class="text-orange">Values</span></h2>
                 <div class="border-bottom-orange mx-auto"></div>
             </div>
             <div class="row">
-                <div class="col-md-3 col-6 animate-on-scroll">
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="value-box">
                         <i class="fas fa-clock float-animation"></i>
                         <h5>24/7 Response</h5>
                         <p>Round-the-clock emergency fire incident investigations and support.</p>
                     </div>
                 </div>
-                <div class="col-md-3 col-6 animate-on-scroll">
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="value-box">
                         <i class="fas fa-certificate float-animation" style="animation-delay: 0.5s;"></i>
                         <h5>NFPA Compliant</h5>
                         <p>All systems strictly adhere to NFPA, BS EN3, and local authority requirements.</p>
                     </div>
                 </div>
-                <div class="col-md-3 col-6 animate-on-scroll">
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="value-box">
                         <i class="fas fa-users float-animation" style="animation-delay: 1s;"></i>
                         <h5>Expert Team</h5>
                         <p>Highly qualified engineers trained in global fire detection and suppression.</p>
                     </div>
                 </div>
-                <div class="col-md-3 col-6 animate-on-scroll">
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
                     <div class="value-box">
                         <i class="fas fa-handshake float-animation" style="animation-delay: 1.5s;"></i>
                         <h5>Client Focus</h5>
@@ -1004,46 +203,46 @@
         </div>
     </section>
 
-    <!-- PRODUCTS -->
+    <!-- ===== PRODUCTS ===== -->
     <section class="section-padding" id="products" style="background: rgba(0,0,0,0.3);">
         <div class="container">
-            <div class="text-center mb-5 animate-on-scroll">
+            <div class="text-center mb-5" data-aos="fade-up">
                 <h2 class="section-title">Our Product <span class="text-orange">Range</span></h2>
                 <div class="border-bottom-orange mx-auto"></div>
                 <p class="text-secondary">High-quality firefighting equipment and life safety products designed for industrial and commercial needs.</p>
             </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
                     <div class="product-item">
                         <img src="images/product1.jpg" alt="Fire Extinguishers" onerror="this.src='https://placehold.co/600x400/222/555?text=Fire+Extinguishers'">
                         <div class="product-overlay"><h6>Portable Fire Extinguishers</h6></div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
                     <div class="product-item">
                         <img src="images/FireHole.jpg" alt="Fire Hose Reels" onerror="this.src='https://placehold.co/600x400/222/555?text=Fire+Hose+Reels'">
                         <div class="product-overlay"><h6>Fire Delivery Hose Reels</h6></div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
                     <div class="product-item">
                         <img src="images/product3.jpg" alt="Fire Alarm Systems" onerror="this.src='https://placehold.co/600x400/222/555?text=Fire+Alarm+Systems'">
                         <div class="product-overlay"><h6>Fire Alarm Systems</h6></div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
                     <div class="product-item">
                         <img src="images/product4.jpg" alt="Safety Signs" onerror="this.src='https://placehold.co/600x400/222/555?text=Safety+Signs'">
                         <div class="product-overlay"><h6>Safety & Warning Signs</h6></div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
                     <div class="product-item">
                         <img src="images/product5.jpg" alt="CCTV & Electric Fence" onerror="this.src='https://placehold.co/600x400/222/555?text=CCTV+%26+Security'">
                         <div class="product-overlay"><h6>Integrated Security Systems</h6></div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="600">
                     <div class="product-item">
                         <img src="images/product6.jpg" alt="Suppression Systems" onerror="this.src='https://placehold.co/600x400/222/555?text=Suppression+Systems'">
                         <div class="product-overlay"><h6>Fire Suppression Systems</h6></div>
@@ -1053,20 +252,19 @@
         </div>
     </section>
 
-    <!-- TEAM SECTION -->
+    <!-- ===== TEAM SECTION ===== -->
     <section class="section-padding" id="team">
         <div class="container">
-            <div class="text-center mb-5 animate-on-scroll">
+            <div class="text-center mb-5" data-aos="fade-up">
                 <h2 class="section-title">Our <span class="text-orange">Leadership</span> Team</h2>
                 <div class="border-bottom-orange mx-auto"></div>
                 <p class="text-secondary">Meet the experts behind Master Guard Fire Solutions – dedicated professionals committed to your safety.</p>
             </div>
             <div class="row g-4 justify-content-center">
-                <!-- Team Member 1 -->
-                <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="100">
                     <div class="team-card">
                         <div class="team-image">
-                            <img src="images/CEO.png" alt="Zacheus Kangu" onerror="this.src='https://placehold.co/400x400/222/555?text=Zacheus+Kangu'">
+                            <img src="images/CEO.png" alt="Humphrey Mbiriti Mwirig" onerror="this.src='https://placehold.co/400x400/222/555?text=Humphrey+Mwirig'">
                         </div>
                         <h4 class="team-name">Humphrey Mbiriti Mwirig</h4>
                         <p class="team-role">Managing Director</p>
@@ -1078,11 +276,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- Team Member 2 -->
-                <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="200">
                     <div class="team-card">
                         <div class="team-image">
-                            <img src="images/image2.png" alt="Gregory Warura" onerror="this.src='https://placehold.co/400x400/222/555?text=Sarah+Wanjiru'">
+                            <img src="images/image2.png" alt="Gregory Warura" onerror="this.src='https://placehold.co/400x400/222/555?text=Gregory+Warura'">
                         </div>
                         <h4 class="team-name">Gregory Warura</h4>
                         <p class="team-role">Head of Operations</p>
@@ -1094,11 +291,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- Team Member 3 -->
-                <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="300">
                     <div class="team-card">
                         <div class="team-image">
-                            <img src="images/manager.png" alt="Zacheus Kangu" onerror="this.src='https://placehold.co/400x400/222/555?text=David+Ochieng'">
+                            <img src="images/manager.png" alt="Zacheus Kangu" onerror="this.src='https://placehold.co/400x400/222/555?text=Zacheus+Kangu'">
                         </div>
                         <h4 class="team-name">Zacheus Kangu</h4>
                         <p class="team-role">Senior Fire Engineer</p>
@@ -1114,30 +310,30 @@
         </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- ===== SERVICES ===== -->
     <section class="section-padding" id="services" style="background: rgba(0,0,0,0.3);">
         <div class="container">
-            <div class="text-center mb-5 animate-on-scroll">
+            <div class="text-center mb-5" data-aos="fade-up">
                 <h2 class="section-title">Professional <span class="text-orange">Services</span></h2>
                 <div class="border-bottom-orange mx-auto"></div>
             </div>
             <div class="row g-4">
-                <div class="col-md-4 animate-on-scroll">
-                    <div class="text-center p-4 hover-glow" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: 0.4s ease;">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card text-center">
                         <i class="fas fa-tools text-orange fs-1 mb-3 float-animation"></i>
                         <h5>Installation & Commissioning</h5>
                         <p class="text-secondary">Professional design, supply, and installation of all systems to meet NFPA and international standards.</p>
                     </div>
                 </div>
-                <div class="col-md-4 animate-on-scroll">
-                    <div class="text-center p-4 hover-glow" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: 0.4s ease;">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card text-center">
                         <i class="fas fa-sync-alt text-orange fs-1 mb-3 float-animation" style="animation-delay: 0.5s;"></i>
                         <h5>Testing & Maintenance</h5>
                         <p class="text-secondary">We offer quarterly and half-yearly servicing to ensure your fire equipment functions flawlessly all year round.</p>
                     </div>
                 </div>
-                <div class="col-md-4 animate-on-scroll">
-                    <div class="text-center p-4 hover-glow" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: 0.4s ease;">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card text-center">
                         <i class="fas fa-chalkboard-teacher text-orange fs-1 mb-3 float-animation" style="animation-delay: 1s;"></i>
                         <h5>Training & Awareness</h5>
                         <p class="text-secondary">Empowering clients with education on mitigating, preparing, and responding to fire disasters effectively.</p>
@@ -1147,15 +343,196 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
+    <!-- ===== PROJECTS PORTFOLIO ===== -->
+    <section class="section-padding" id="projects">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Our <span class="text-orange">Projects</span></h2>
+                <div class="border-bottom-orange mx-auto"></div>
+                <p class="text-secondary">See our successful installations across various industries</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="project-card">
+                        <img src="images/project1.jpg" alt="Industrial Fire System" onerror="this.src='https://placehold.co/600x400/222/555?text=Industrial+Project'">
+                        <div class="project-info">
+                            <h5>Industrial Fire Suppression</h5>
+                            <p>Oriental Mills Ltd - Complete fire protection system</p>
+                            <span class="badge bg-orange">Completed 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="project-card">
+                        <img src="images/project2.jpg" alt="Commercial Building" onerror="this.src='https://placehold.co/600x400/222/555?text=Commercial+Project'">
+                        <div class="project-info">
+                            <h5>Commercial High-Rise</h5>
+                            <p>Surge Energy Ltd - Advanced alarm and suppression</p>
+                            <span class="badge bg-orange">Completed 2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="project-card">
+                        <img src="images/project3.jpg" alt="Warehouse Safety" onerror="this.src='https://placehold.co/600x400/222/555?text=Warehouse+Project'">
+                        <div class="project-info">
+                            <h5>Warehouse Fire Safety</h5>
+                            <p>Kentainers Ltd - Complete safety system installation</p>
+                            <span class="badge bg-orange">Completed 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CERTIFICATIONS & ACCREDITATIONS ===== -->
+    <section class="section-padding" id="certifications" style="background: rgba(0,0,0,0.3);">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Our <span class="text-orange">Certifications</span></h2>
+                <div class="border-bottom-orange mx-auto"></div>
+                <p class="text-secondary">Proudly certified and compliant with international safety standards</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-3 text-center" data-aos="flip-up" data-aos-delay="100">
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate text-orange fs-1"></i>
+                        <h6>ISO 9001:2015</h6>
+                        <small>Quality Management</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center" data-aos="flip-up" data-aos-delay="200">
+                    <div class="cert-badge">
+                        <i class="fas fa-shield-alt text-orange fs-1"></i>
+                        <h6>NFPA Certified</h6>
+                        <small>Fire Protection Standards</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center" data-aos="flip-up" data-aos-delay="300">
+                    <div class="cert-badge">
+                        <i class="fas fa-hard-hat text-orange fs-1"></i>
+                        <h6>OSHA Compliant</h6>
+                        <small>Safety Regulations</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center" data-aos="flip-up" data-aos-delay="400">
+                    <div class="cert-badge">
+                        <i class="fas fa-globe-africa text-orange fs-1"></i>
+                        <h6>BS EN3 Standard</h6>
+                        <small>European Fire Safety</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EMERGENCY RESPONSE SHOWCASE ===== -->
+    <section class="section-padding" id="emergency" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a0000 100%);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="section-title">24/7 Emergency <span class="text-orange">Response</span></h2>
+                    <div class="border-bottom-orange"></div>
+                    <p class="text-secondary">Our rapid response team is always ready to handle emergencies with precision and speed</p>
+                    <ul class="emergency-list">
+                        <li><i class="fas fa-check-circle text-orange"></i> 30-minute response time</li>
+                        <li><i class="fas fa-check-circle text-orange"></i> Certified emergency technicians</li>
+                        <li><i class="fas fa-check-circle text-orange"></i> Fully equipped response vehicles</li>
+                        <li><i class="fas fa-check-circle text-orange"></i> 24/7 incident investigation</li>
+                    </ul>
+                    <a href="#contact" class="cta-btn pulse-glow mt-3"><i class="fas fa-phone-alt me-2"></i> Call Now: 0726 221 183</a>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="emergency-image-wrapper">
+                        <img src="images/emergency.jpg" alt="Emergency Response" class="img-fluid rounded" onerror="this.src='https://placehold.co/600x400/222/555?text=Emergency+Response'">
+                        <div class="emergency-overlay">
+                            <span><i class="fas fa-circle text-orange pulse-dot"></i> Ready 24/7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INDUSTRIES WE SERVE ===== -->
+    <section class="section-padding" id="industries" style="background: rgba(0,0,0,0.3);">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Industries We <span class="text-orange">Serve</span></h2>
+                <div class="border-bottom-orange mx-auto"></div>
+                <p class="text-secondary">Tailored fire safety solutions for diverse sectors</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="industry-card">
+                        <i class="fas fa-factory text-orange fs-1 mb-2"></i>
+                        <h6>Manufacturing</h6>
+                        <small class="text-secondary">Industrial safety</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="industry-card">
+                        <i class="fas fa-hospital text-orange fs-1 mb-2"></i>
+                        <h6>Healthcare</h6>
+                        <small class="text-secondary">Medical facilities</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="industry-card">
+                        <i class="fas fa-building text-orange fs-1 mb-2"></i>
+                        <h6>Commercial</h6>
+                        <small class="text-secondary">Offices & retail</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="industry-card">
+                        <i class="fas fa-warehouse text-orange fs-1 mb-2"></i>
+                        <h6>Warehousing</h6>
+                        <small class="text-secondary">Storage & logistics</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="industry-card">
+                        <i class="fas fa-hotel text-orange fs-1 mb-2"></i>
+                        <h6>Hospitality</h6>
+                        <small class="text-secondary">Hotels & resorts</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="industry-card">
+                        <i class="fas fa-school text-orange fs-1 mb-2"></i>
+                        <h6>Education</h6>
+                        <small class="text-secondary">Schools & campuses</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="700">
+                    <div class="industry-card">
+                        <i class="fas fa-database text-orange fs-1 mb-2"></i>
+                        <h6>Data Centers</h6>
+                        <small class="text-secondary">IT infrastructure</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="800">
+                    <div class="industry-card">
+                        <i class="fas fa-oil-can text-orange fs-1 mb-2"></i>
+                        <h6>Energy & Oil</h6>
+                        <small class="text-secondary">Petroleum & gas</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
     <section class="section-padding" id="testimonials">
         <div class="container">
-            <div class="text-center mb-5 animate-on-scroll">
+            <div class="text-center mb-5" data-aos="fade-up">
                 <h2 class="section-title">What Our <span class="text-orange">Clients Say</span></h2>
                 <div class="border-bottom-orange mx-auto"></div>
             </div>
             <div class="row g-4">
-                <div class="col-md-4 animate-on-scroll">
+                <div class="col-md-4" data-aos="flip-up" data-aos-delay="100">
                     <div class="testimonial-card">
                         <i class="fas fa-quote-left quote-icon"></i>
                         <p>"Master Guard Fire Solutions provided exceptional service for our factory. Their team ensured our fire alarm systems were NFPA compliant and fully operational within days. Highly recommended!"</p>
@@ -1163,7 +540,7 @@
                         <p class="client-role">Oriental Mills Ltd</p>
                     </div>
                 </div>
-                <div class="col-md-4 animate-on-scroll">
+                <div class="col-md-4" data-aos="flip-up" data-aos-delay="200">
                     <div class="testimonial-card">
                         <i class="fas fa-quote-left quote-icon"></i>
                         <p>"The 24/7 emergency support gave us peace of mind. When we had a minor incident, their technicians arrived within the hour for a thorough investigation. Truly professional."</p>
@@ -1171,7 +548,7 @@
                         <p class="client-role">Surge Energy Ltd</p>
                     </div>
                 </div>
-                <div class="col-md-4 animate-on-scroll">
+                <div class="col-md-4" data-aos="flip-up" data-aos-delay="300">
                     <div class="testimonial-card">
                         <i class="fas fa-quote-left quote-icon"></i>
                         <p>"We have been using Master Guard for our fire extinguisher maintenance for 3 years. Their quarterly servicing is thorough, and their staff is highly knowledgeable."</p>
@@ -1183,33 +560,155 @@
         </div>
     </section>
 
-    <!-- CLIENTS -->
+    <!-- ===== AWARDS & RECOGNITION ===== -->
+    <section class="section-padding" id="awards" style="background: rgba(0,0,0,0.3);">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Awards & <span class="text-orange">Recognition</span></h2>
+                <div class="border-bottom-orange mx-auto"></div>
+                <p class="text-secondary">Excellence in fire safety acknowledged by industry leaders</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="award-card text-center">
+                        <i class="fas fa-trophy text-orange fs-1"></i>
+                        <h5>Best Fire Safety Provider 2024</h5>
+                        <small class="text-secondary">Kenya Safety Awards</small>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="award-card text-center">
+                        <i class="fas fa-medal text-orange fs-1"></i>
+                        <h5>Excellence in Service 2023</h5>
+                        <small class="text-secondary">East African Business Awards</small>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="award-card text-center">
+                        <i class="fas fa-star text-orange fs-1"></i>
+                        <h5>Innovation in Fire Safety 2023</h5>
+                        <small class="text-secondary">NFPA Recognition</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="section-padding" id="faq">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Frequently Asked <span class="text-orange">Questions</span></h2>
+                <div class="border-bottom-orange mx-auto"></div>
+                <p class="text-secondary">Quick answers to common fire safety queries</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How often should fire extinguishers be serviced?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Fire extinguishers should be serviced annually by a certified technician, with monthly visual inspections. We offer comprehensive maintenance packages to ensure your equipment is always ready.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    What NFPA standards do you comply with?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">We strictly adhere to NFPA 10 (Portable Extinguishers), NFPA 72 (Fire Alarm Systems), NFPA 13 (Sprinkler Systems), and NFPA 101 (Life Safety Code). All our installations meet or exceed these international standards.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    How quickly can you respond to emergencies?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Our emergency response team is available 24/7 with a guaranteed 30-minute response time within Nairobi and surrounding areas. We have fully equipped vehicles and certified technicians ready to respond immediately.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Do you offer fire safety training?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Yes, we provide comprehensive fire safety training including fire extinguisher usage, evacuation procedures, risk assessment, and emergency response. Training is available both on-site and at our facilities.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    What industries do you serve?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">We serve a wide range of industries including manufacturing, healthcare, commercial buildings, warehousing, hospitality, education, data centers, energy, and oil sectors. Each solution is tailored to specific industry requirements.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CLIENTS ===== -->
     <section class="section-padding" id="clients" style="background: rgba(0,0,0,0.3);">
         <div class="container">
-            <div class="text-center mb-4 animate-on-scroll">
+            <div class="text-center mb-4" data-aos="fade-up">
                 <h2 class="section-title">Trusted by Leading <span class="text-orange">Industries</span></h2>
                 <div class="border-bottom-orange mx-auto"></div>
                 <p class="text-secondary">Proudly serving a diverse range of established organizations across multiple sectors.</p>
             </div>
             <div class="text-center">
-                <span class="client-badge animate-on-scroll">Oriental Mills Ltd</span>
-                <span class="client-badge animate-on-scroll">Surge Energy Ltd</span>
-                <span class="client-badge animate-on-scroll">Lab & Allied Ltd</span>
-                <span class="client-badge animate-on-scroll">Clips Ltd</span>
-                <span class="client-badge animate-on-scroll">Hodge Ventures Ltd</span>
-                <span class="client-badge animate-on-scroll">Home & More Ltd</span>
-                <span class="client-badge animate-on-scroll">Pan Paper Mills 2015 Ltd</span>
-                <span class="client-badge animate-on-scroll">Kentainers Ltd</span>
-                <span class="client-badge animate-on-scroll">And Many More...</span>
+                <span class="client-badge" data-aos="zoom-in" data-aos-delay="100">Oriental Mills Ltd</span>
+                <span class="client-badge" data-aos="zoom-in" data-aos-delay="150">Surge Energy Ltd</span>
+                <span class="client-badge" data-aos="zoom-in" data-aos-delay="200">Lab & Allied Ltd</span>
+                <span class="client-badge" data-aos="zoom-in" data-aos-delay="250">Clips Ltd</span>
+                <span class="client-badge" data-aos="zoom-in" data-aos-delay="300">Hodge Ventures Ltd</span>
+                <span class="client-badge" data-aos="zoom-in" data-aos-delay="350">Home & More Ltd</span>
+                <span class="client-badge" data-aos="zoom-in" data-aos-delay="400">Pan Paper Mills 2015 Ltd</span>
+                <span class="client-badge" data-aos="zoom-in" data-aos-delay="450">Kentainers Ltd</span>
+                <span class="client-badge" data-aos="zoom-in" data-aos-delay="500">And Many More...</span>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- ===== NEWSLETTER SECTION ===== -->
+    <section class="section-padding" id="newsletter" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a0000 100%);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h3 class="section-title" style="font-size: 2rem;">Subscribe to Our <span class="text-orange">Newsletter</span></h3>
+                    <p class="text-secondary">Get the latest safety tips, industry updates, and exclusive offers</p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email address" required>
+                            <button class="btn btn-orange" type="submit">Subscribe <i class="fas fa-paper-plane ms-2"></i></button>
+                        </div>
+                        <small class="text-secondary d-block mt-2"><i class="fas fa-lock me-1"></i> We respect your privacy. No spam, ever.</small>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
     <section class="section-padding" id="contact">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 mb-4 mb-lg-0 animate-on-scroll">
+                <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
                     <h2 class="section-title">Get In <span class="text-orange">Touch</span></h2>
                     <div class="border-bottom-orange"></div>
                     <p class="text-secondary mb-4">We are totally dedicated to the maintenance of fire fighting systems. Our technicians are available round the clock for emergency requirements.</p>
@@ -1225,11 +724,15 @@
                         <h6><i class="fas fa-envelope me-2"></i> Email</h6>
                         <p>humphreysolution2022@gmail.com</p>
                     </div>
+                    <div class="contact-info-box">
+                        <h6><i class="fas fa-clock me-2"></i> Working Hours</h6>
+                        <p>Mon - Fri: 8:00 AM - 6:00 PM | Emergency: 24/7</p>
+                    </div>
                 </div>
-                <div class="col-lg-7 animate-on-scroll">
+                <div class="col-lg-7" data-aos="fade-left">
                     <div class="contact-form bg-dark-custom p-4 p-md-5 rounded-3 border border-secondary border-opacity-10">
                         <h4 class="mb-3">Send us a Message</h4>
-                        <form>
+                        <form id="contactForm">
                             <div class="row">
                                 <div class="col-md-6">
                                     <input type="text" placeholder="Your Full Name" required>
@@ -1248,11 +751,11 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 mb-4 animate-on-scroll">
+                <div class="col-lg-4 mb-4" data-aos="fade-right">
                     <div class="d-flex align-items-center gap-3 mb-3">
                         <div class="logo-circle" style="width: 55px; height: 55px; border: 2px solid #ff4500; border-radius: 50%; overflow: hidden;">
                             <img src="images/logo.jpg" alt="Master Guard Logo" style="width: 100%; height: 100%; object-fit: cover;">
@@ -1266,8 +769,13 @@
                         We are a premier private organization specializing in fire protection systems.
                         We provide quality hardware, hazard training, and audits at all levels of vulnerability.
                     </p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-secondary me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-secondary me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="www.youtube.com/@wanjala_davis" class="text-secondary"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
-                <div class="col-md-4 col-lg-2 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-lg-2 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <h5>Quick Links</h5>
                     <ul>
                         <li><a href="#home">Home</a></li>
@@ -1275,37 +783,56 @@
                         <li><a href="#products">Products</a></li>
                         <li><a href="#team">Our Team</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-lg-3 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <h5>Our Services</h5>
                     <ul>
-                        <li><a href="#">Fire Suppression</a></li>
-                        <li><a href="#">Alarm Systems</a></li>
-                        <li><a href="#">Safety Training</a></li>
-                        <li><a href="#">24/7 Maintenance</a></li>
+                        <li><a href="#services">Fire Suppression</a></li>
+                        <li><a href="#services">Alarm Systems</a></li>
+                        <li><a href="#services">Safety Training</a></li>
+                        <li><a href="#services">24/7 Maintenance</a></li>
+                        <li><a href="#services">Risk Assessment</a></li>
+                        <li><a href="#services">System Design</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-lg-3 mb-4 animate-on-scroll">
-                    <h5>Emergency</h5>
-                    <p class="text-orange" style="font-size: 1.5rem; font-weight: 700;">0726 221 183| 0719 485 834</p>
+                <div class="col-md-4 col-lg-3 mb-4" data-aos="fade-left">
+                    <h5>Emergency Contact</h5>
+                    <p class="text-orange" style="font-size: 1.5rem; font-weight: 700;">0726 221 183</p>
+                    <p class="text-orange" style="font-size: 1.2rem; font-weight: 600;">0719 485 834</p>
                     <p class="text-secondary" style="font-size: 0.85rem;">Available 24 hours a day, 7 days a week for emergency fire response and incident investigation.</p>
+                    <a href="#contact" class="cta-btn" style="padding: 10px 25px; font-size: 0.8rem;">Contact Now</a>
                 </div>
             </div>
-            <div class="border-top border-secondary border-opacity-10 mt-4 pt-4 d-flex flex-wrap justify-content-between">
+            <div class="border-top border-secondary border-opacity-10 mt-4 pt-4 d-flex flex-wrap justify-content-between align-items-center">
                 <p class="text-secondary mb-0" style="font-size: 13px;">&copy; 2026 Wanjala Solutions. All Rights Reserved.</p>
-                <div class="social-icons">
-                    <a href="#" class="text-secondary me-3"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-secondary me-3"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-secondary"><i class="fab fa-youtube"></i></a>
-                </div>
+                <p class="text-secondary mb-0" style="font-size: 13px;">
+                    <a href="#" class="text-secondary text-decoration-none">Privacy Policy</a>
+                    <span class="mx-2">|</span>
+                    <a href="#" class="text-secondary text-decoration-none">Terms of Service</a>
+                </p>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ===== SCROLL TO TOP BUTTON ===== -->
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
         // Smooth scrolling for nav links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1343,36 +870,55 @@
                     }
                 });
             });
+
+            // Navbar background on scroll
+            const navbar = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Scroll to top button
+            const scrollBtn = document.getElementById('scrollTopBtn');
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
         });
 
-        // Scroll-triggered animations
-        const animateElements = document.querySelectorAll('.animate-on-scroll');
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    // Add staggered delay for children
-                    const children = entry.target.querySelectorAll('.animate-on-scroll');
-                    children.forEach((child, index) => {
-                        child.style.transitionDelay = `${index * 0.1}s`;
-                        child.classList.add('visible');
-                    });
-                }
-            });
-        }, observerOptions);
-
-        animateElements.forEach(el => observer.observe(el));
-
-        // Also observe client badges individually
-        document.querySelectorAll('.client-badge').forEach((badge, index) => {
-            badge.style.transitionDelay = `${index * 0.05}s`;
-            observer.observe(badge);
+        // Scroll to top button click
+        document.getElementById('scrollTopBtn').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // Newsletter form submission
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                alert('Thank you for subscribing! You will receive our latest updates.');
+                this.reset();
+            }
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! Our team will get back to you within 24 hours.');
+            this.reset();
+        });
+
+        // Add pulse animation to emergency dot
+        setInterval(() => {
+            const dot = document.querySelector('.pulse-dot');
+            if (dot) {
+                dot.style.opacity = dot.style.opacity === '0.3' ? '1' : '0.3';
+            }
+        }, 1000);
+
+        console.log('🔥 Master Guard Fire Solutions - Protecting Lives & Assets');
     </script>
 </body>
 </html>
